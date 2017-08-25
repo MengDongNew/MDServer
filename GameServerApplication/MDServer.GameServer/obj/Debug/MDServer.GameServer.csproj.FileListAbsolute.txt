@@ -1,0 +1,5 @@
+C:\Users\mengdong\Documents\workspace\Demo\GameServerApplication\MDServer.GameServer\bin\Debug\MDServer.GameServer.dll
+C:\Users\mengdong\Documents\workspace\Demo\GameServerApplication\MDServer.GameServer\bin\Debug\MDServer.GameServer.pdb
+C:\Users\mengdong\Documents\workspace\Demo\GameServerApplication\MDServer.GameServer\obj\Debug\MDServer.GameServer.csprojResolveAssemblyReference.cache
+C:\Users\mengdong\Documents\workspace\Demo\GameServerApplication\MDServer.GameServer\obj\Debug\MDServer.GameServer.dll
+C:\Users\mengdong\Documents\workspace\Demo\GameServerApplication\MDServer.GameServer\obj\Debug\MDServer.GameServer.pdb
