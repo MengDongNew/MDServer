@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace MDServer.GameServer
 {
     public class OperationResponseTool
@@ -11,6 +6,7 @@ namespace MDServer.GameServer
         public static ArrByte64K GetPacket(OperationResponse response)
         {
             PacketSend packetSend = PacketSend.Create(response.OperationCode);
+            packetSend.SetReturnCode(response.ReturnCode);
             if (response.Parameters != null)
             {
                 foreach (var parameter in response.Parameters)
@@ -19,7 +15,7 @@ namespace MDServer.GameServer
                     packetSend.Write((string)parameter.Value);
                 }
             }
-           
+
             return packetSend.CreateArrByte64K();
         }
     }

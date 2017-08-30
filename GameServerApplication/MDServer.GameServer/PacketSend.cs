@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace MDServer.GameServer
 {
     /// <summary>
     ///                  |--------------------------客户端数据--------|
     ///                  |--------------------------Length-----------|
-    ///|----4B:ConnId----|---2B:Length---|----2B:EventId---|--Data---|
+    ///|----4B:ConnId----|---2B:Length---|----2B:OperationCode---|---2B:ReturnCode---|--Data---|
     /// </summary>
     public class PacketSend
     {
         private ArrByte64K _arrByte64K;
-        private ushort _i = 8;//第 8 个字节 
+        private ushort _i = 10;//第 10 个字节 
         public ushort I { get { return _i; } }
         private PacketSend()
         { }
@@ -26,6 +24,7 @@ namespace MDServer.GameServer
             p._arrByte64K.arrByte64K[7] = (byte)(operationCode);//第6、7位存储 operationCode
             return p;
         }
+
         public static PacketSend Create(PacketSend pk)
         {
             var p = new PacketSend();
@@ -34,6 +33,13 @@ namespace MDServer.GameServer
             p._arrByte64K.len = pk._arrByte64K.len;
             p._i = pk._i;
             return p;
+        }
+
+        public PacketSend SetReturnCode(short returnCode)
+        {
+            _arrByte64K.arrByte64K[8] = (byte)(returnCode >> 8);//
+            _arrByte64K.arrByte64K[9] = (byte)(returnCode);//第8、9位存储returnCode
+            return this;
         }
         public PacketSend Write(bool v)
         {

@@ -52,6 +52,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{4e68b8c4-bafa-47d7-b826-d9b4e8a3cddd}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MDServer.GameServer\MDServer.GameServer.csproj">
       <Project>{899f2cdc-f2cf-4362-a71c-bdaf52397bf1}</Project>
       <Name>MDServer.GameServer</Name>

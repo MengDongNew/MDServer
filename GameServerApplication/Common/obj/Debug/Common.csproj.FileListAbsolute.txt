@@ -1,0 +1,5 @@
+C:\Users\mengdong\Documents\workspace\Demo\GameServerApplication\Common\bin\Debug\Common.dll
+C:\Users\mengdong\Documents\workspace\Demo\GameServerApplication\Common\bin\Debug\Common.pdb
+C:\Users\mengdong\Documents\workspace\Demo\GameServerApplication\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Users\mengdong\Documents\workspace\Demo\GameServerApplication\Common\obj\Debug\Common.dll
+C:\Users\mengdong\Documents\workspace\Demo\GameServerApplication\Common\obj\Debug\Common.pdb
