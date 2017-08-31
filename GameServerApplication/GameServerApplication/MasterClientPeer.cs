@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Common;
+using GameServerApplication.Handlers;
 using MDServer.GameServer;
 
 namespace GameServerApplication
@@ -13,7 +14,11 @@ namespace GameServerApplication
         public MasterClientPeer(InitRequest initRequest) : base(initRequest)
         {
         }
-        public override void OnDisconnect(DisconnectReason reasonCode, string reasonDetail)
+
+
+        #region Interface
+
+            public override void OnDisconnect(DisconnectReason reasonCode, string reasonDetail)
         {
             Log("DisconnectReason=" + reasonCode);
         }
@@ -25,13 +30,22 @@ namespace GameServerApplication
             {
                 Log(parameter.Key + ":" + parameter.Value.ToString());
             }
-            OperationResponse response = new OperationResponse(operationRequest.OperationCode);
-            response.Parameters = new Dictionary<byte, object>();
-            response.Parameters.Add(2, "我是服务器，hello！");
-            response.ReturnCode = (short)ReturnCode.Succeed;
-            SendOperationResponse(response, sendParameters);
 
+            HandlerBase handler;
+            if (MasterApplication.Instance.TryGetHandler(operationRequest.OperationCode, out handler))
+            {
+                OperationResponse response = new OperationResponse(operationRequest.OperationCode);
+                response.Parameters = new Dictionary<byte, object>();
+                handler.OnHandleMessage(operationRequest,response,this,sendParameters);
+                SendOperationResponse(response, sendParameters);
+            }
+            else
+            {
+                Log("Can't find handler from OperationCode ："+operationRequest.OperationCode);
+            }
 
+           /*
+           
             EventData eventData = new EventData()
             {
                 Code = operationRequest.OperationCode,
@@ -39,7 +53,11 @@ namespace GameServerApplication
             eventData.Parameters = new Dictionary<byte, object>();
             eventData.Parameters.Add(100,"我是服务器EventData");
             SendEvent(eventData, sendParameters);
+            */
         }
+
+        #endregion
+    
 
         private void Log(string s)
         {

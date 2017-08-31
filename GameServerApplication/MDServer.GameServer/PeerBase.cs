@@ -34,7 +34,7 @@ namespace MDServer.GameServer
         }
 
         //Send Event Data
-        public SendResult SendEvent(IEventData eventData, SendParameters sendParameters)
+        public SendResult SendEvent(IEventData eventData/*, SendParameters sendParameters*/)
         {
             Packet packet = new Packet()
             {

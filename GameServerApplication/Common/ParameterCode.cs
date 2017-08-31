@@ -8,5 +8,6 @@ namespace Common
     /// </summary>
     public enum ParameterCode:byte
     {
+        ServerList,//服务器列表
     }
 }

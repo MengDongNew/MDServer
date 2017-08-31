@@ -8,6 +8,6 @@ namespace Common
     public enum OperationCode : byte
     {
         SubCode,
-        ServerList,
+        Server,
     }
 }
