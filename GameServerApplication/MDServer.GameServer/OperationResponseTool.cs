@@ -5,7 +5,7 @@ namespace MDServer.GameServer
     {
         public static ArrByte64K GetPacket(OperationResponse response)
         {
-            PacketSend packetSend = PacketSend.Create(response.OperationCode);
+            PacketSend packetSend = PacketSend.Create(response.OperationCode, PacketSend.CodeType.OperationCode);
             packetSend.SetReturnCode(response.ReturnCode);
             if (response.Parameters != null)
             {

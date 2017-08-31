@@ -3,6 +3,10 @@ using System.Text;
 
 namespace MDServer.GameServer
 {
+    /// <summary>
+    ///                  |--------------------------客户端数据--------|
+    ///                  |--------------------------Length-----------|
+    ///|----4B:ConnId----|---2B:Length---|---1B:OperationCode---|--Data---|
     public class ArrByteReader
     {
         private Encoding m_UTF8;
@@ -61,8 +65,6 @@ namespace MDServer.GameServer
             {
                 bytes[i] = _arrByte.arrByte64K[_readLen - len + i];
             }
-
-            //return bytes;
         }
         public short ReadShort()
         {

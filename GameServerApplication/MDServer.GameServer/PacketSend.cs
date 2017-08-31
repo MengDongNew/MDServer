@@ -7,23 +7,29 @@ namespace MDServer.GameServer
     /// <summary>
     ///                  |--------------------------客户端数据--------|
     ///                  |--------------------------Length-----------|
-    ///|----4B:ConnId----|---2B:Length---|----2B:OperationCode---|---2B:ReturnCode---|--Data---|
+    ///|----4B:ConnId----|---2B:Length---|---1B:CodeType---|----1B:Code---|---2B:ReturnCode---|--Data---|
     /// </summary>
     public class PacketSend
     {
+        public enum CodeType
+        {
+            OperationCode,
+            EventCode,
+        }
         private ArrByte64K _arrByte64K;
-        private ushort _i = 10;//第 10 个字节 
+        private ushort _i = 10;//第 _i 个字节 是数据
         public ushort I { get { return _i; } }
         private PacketSend()
         { }
-        public static PacketSend Create(ushort operationCode)
+        public static PacketSend Create(byte code, CodeType codeType)
         {
             var p = new PacketSend();
             p._arrByte64K = ArrByte64KPool.Instance.Get();
-            p._arrByte64K.arrByte64K[6] = (byte)(operationCode >> 8);//
-            p._arrByte64K.arrByte64K[7] = (byte)(operationCode);//第6、7位存储 operationCode
+            p._arrByte64K.arrByte64K[6] = (byte)(codeType);//第6位存储 CodeType
+            p._arrByte64K.arrByte64K[7] = (byte)(code);//第7位存储 Code
             return p;
         }
+        
 
         public static PacketSend Create(PacketSend pk)
         {

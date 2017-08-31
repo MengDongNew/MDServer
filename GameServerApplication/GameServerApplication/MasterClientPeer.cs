@@ -30,6 +30,15 @@ namespace GameServerApplication
             response.Parameters.Add(2, "我是服务器，hello！");
             response.ReturnCode = (short)ReturnCode.Succeed;
             SendOperationResponse(response, sendParameters);
+
+
+            EventData eventData = new EventData()
+            {
+                Code = operationRequest.OperationCode,
+            };
+            eventData.Parameters = new Dictionary<byte, object>();
+            eventData.Parameters.Add(100,"我是服务器EventData");
+            SendEvent(eventData, sendParameters);
         }
 
         private void Log(string s)

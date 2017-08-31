@@ -19,6 +19,7 @@ namespace MDServer.GameServer
             this.userToken = userToken;
         }
         
+        //Send Operation handle data send back
         public SendResult SendOperationResponse(OperationResponse operationResponse, SendParameters sendParameters)
         {
             Packet packet = new Packet()
@@ -31,6 +32,19 @@ namespace MDServer.GameServer
 
             return SendResult.Ok;
         }
+
+        //Send Event Data
+        public SendResult SendEvent(IEventData eventData, SendParameters sendParameters)
+        {
+            Packet packet = new Packet()
+            {
+                connId = userToken.connId,
+                arrByte64K = EventDataTool.GetPacket(eventData)
+            };
+            userToken.Server.PutSendPacket(packet);
+            return SendResult.Ok;
+        }
+
 
         public abstract void OnDisconnect(DisconnectReason reasonCode, string reasonDetail);
 

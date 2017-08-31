@@ -9,7 +9,7 @@ namespace MDServer.GameServer
             ArrByteReader reader = new ArrByteReader();
             reader.SetArrByte(arrByte64K);
             OperationRequest operationRequest = new OperationRequest();
-            operationRequest.OperationCode = (byte)reader.ReaduShort();
+            operationRequest.OperationCode = reader.ReadByte();
             operationRequest.Parameters = new Dictionary<byte, object>();
             while (reader.ReadLen< arrByte64K.len)
             {
