@@ -509,7 +509,7 @@ namespace MDServer.GameServer
 
                 token.sendComplete = false;
                 token.arrBuffSend = pk.arrByte64K;
-                token.sendEventArgs.SetBuffer(pk.arrByte64K.arrByte64K,4, pk.arrByte64K.len-4);
+                token.sendEventArgs.SetBuffer(pk.arrByte64K.arrByte64K,0, pk.arrByte64K.len);
                 bool willRaiseEvent = token.Socket.SendAsync(token.sendEventArgs);//如果 I/O 操作同步完成，将返回 false
                 if (!willRaiseEvent)
                 {

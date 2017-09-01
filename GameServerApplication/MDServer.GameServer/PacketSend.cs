@@ -7,7 +7,7 @@ namespace MDServer.GameServer
     /// <summary>
     ///                  |--------------------------客户端数据--------|
     ///                  |--------------------------Length-----------|
-    ///|----4B:ConnId----|---2B:Length---|---1B:CodeType---|----1B:Code---|---2B:ReturnCode---|--Data---|
+    ///                  |---2B:Length---|---1B:CodeType---|----1B:Code---|---2B:ReturnCode---|--Data---|
     /// </summary>
     public class PacketSend
     {
@@ -17,7 +17,7 @@ namespace MDServer.GameServer
             EventCode,
         }
         private ArrByte64K _arrByte64K;
-        private ushort _i = 10;//第 _i 个字节 是数据
+        private ushort _i = 6;//第 _i 个字节 是数据
         public ushort I { get { return _i; } }
         private PacketSend()
         { }
@@ -25,8 +25,8 @@ namespace MDServer.GameServer
         {
             var p = new PacketSend();
             p._arrByte64K = ArrByte64KPool.Instance.Get();
-            p._arrByte64K.arrByte64K[6] = (byte)(codeType);//第6位存储 CodeType
-            p._arrByte64K.arrByte64K[7] = (byte)(code);//第7位存储 Code
+            p._arrByte64K.arrByte64K[2] = (byte)(codeType);//第2位存储 CodeType
+            p._arrByte64K.arrByte64K[3] = (byte)(code);//第3位存储 Code
             return p;
         }
         
@@ -40,11 +40,19 @@ namespace MDServer.GameServer
             p._i = pk._i;
             return p;
         }
-
+        public ArrByte64K CreateArrByte64K()
+        {
+            _arrByte64K.arrByte64K[0] = (byte)(_i >> 8);
+            _arrByte64K.arrByte64K[1] = (byte)(_i);//0，1字节存储_i的大小
+            _arrByte64K.len = _i;
+            var ar = _arrByte64K;
+            _arrByte64K = null;
+            return ar;
+        }
         public PacketSend SetReturnCode(short returnCode)
         {
-            _arrByte64K.arrByte64K[8] = (byte)(returnCode >> 8);//
-            _arrByte64K.arrByte64K[9] = (byte)(returnCode);//第8、9位存储returnCode
+            _arrByte64K.arrByte64K[4] = (byte)(returnCode >> 8);//
+            _arrByte64K.arrByte64K[5] = (byte)(returnCode);//第4、5位存储returnCode
             return this;
         }
         public PacketSend Write(bool v)
@@ -191,15 +199,7 @@ namespace MDServer.GameServer
             _i += (ushort)length;
             return this;
         }
-        public ArrByte64K CreateArrByte64K()
-        {
-            _arrByte64K.arrByte64K[4] = (byte)((_i - 4) >> 8);
-            _arrByte64K.arrByte64K[5] = (byte)((_i - 4));//4，5字节存储_i的大小
-            _arrByte64K.len = _i;
-            var ar = _arrByte64K;
-            _arrByte64K = null;
-            return ar;
-        }
+
 
         private static void Log(string s)
         {
