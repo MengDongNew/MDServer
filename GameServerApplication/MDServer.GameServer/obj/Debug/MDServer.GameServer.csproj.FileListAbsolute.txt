@@ -8,3 +8,9 @@ C:\Users\mengdong\Documents\GitHub\MDServer\GameServerApplication\MDServer.GameS
 C:\Users\mengdong\Documents\GitHub\MDServer\GameServerApplication\MDServer.GameServer\obj\Debug\MDServer.GameServer.csprojResolveAssemblyReference.cache
 C:\Users\mengdong\Documents\GitHub\MDServer\GameServerApplication\MDServer.GameServer\obj\Debug\MDServer.GameServer.dll
 C:\Users\mengdong\Documents\GitHub\MDServer\GameServerApplication\MDServer.GameServer\obj\Debug\MDServer.GameServer.pdb
+F:\GitHub\MDServer\GameServerApplication\MDServer.GameServer\bin\Debug\MDServer.GameServer.dll
+F:\GitHub\MDServer\GameServerApplication\MDServer.GameServer\bin\Debug\MDServer.GameServer.pdb
+F:\GitHub\MDServer\GameServerApplication\MDServer.GameServer\obj\Debug\MDServer.GameServer.csprojResolveAssemblyReference.cache
+F:\GitHub\MDServer\GameServerApplication\MDServer.GameServer\obj\Debug\MDServer.GameServer.csproj.CoreCompileInputs.cache
+F:\GitHub\MDServer\GameServerApplication\MDServer.GameServer\obj\Debug\MDServer.GameServer.dll
+F:\GitHub\MDServer\GameServerApplication\MDServer.GameServer\obj\Debug\MDServer.GameServer.pdb

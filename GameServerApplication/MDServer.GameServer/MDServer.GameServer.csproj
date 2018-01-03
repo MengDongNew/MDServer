@@ -44,6 +44,9 @@
     <Compile Include="ArrByte64K.cs" />
     <Compile Include="ArrByteReader.cs" />
     <Compile Include="EnumDefine.cs" />
+    <Compile Include="EventData.cs" />
+    <Compile Include="EventDataTool.cs" />
+    <Compile Include="IEventData.cs" />
     <Compile Include="InitRequest.cs" />
     <Compile Include="MServer.cs" />
     <Compile Include="OperationRequest.cs" />
