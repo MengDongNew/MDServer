@@ -16,3 +16,10 @@ C:\Users\mengdong\Documents\GitHub\MDServer\GameServerApplication\GameServerAppl
 C:\Users\mengdong\Documents\GitHub\MDServer\GameServerApplication\GameServerApplication\bin\Debug\Common.pdb
 C:\Users\mengdong\Documents\GitHub\MDServer\GameServerApplication\GameServerApplication\bin\Debug\MDServer.GameServer.pdb
 C:\Users\mengdong\Documents\GitHub\MDServer\GameServerApplication\GameServerApplication\obj\Debug\GameServerApplication.csprojResolveAssemblyReference.cache
+F:\GitHub\MDServer\GameServerApplication\ExportApplication\bin\GameServerApplication.exe.config
+F:\GitHub\MDServer\GameServerApplication\ExportApplication\bin\GameServerApplication.exe
+F:\GitHub\MDServer\GameServerApplication\ExportApplication\bin\GameServerApplication.pdb
+F:\GitHub\MDServer\GameServerApplication\GameServerApplication\obj\Debug\GameServerApplication.csprojResolveAssemblyReference.cache
+F:\GitHub\MDServer\GameServerApplication\GameServerApplication\obj\Debug\GameServerApplication.csproj.CoreCompileInputs.cache
+F:\GitHub\MDServer\GameServerApplication\GameServerApplication\obj\Debug\GameServerApplication.exe
+F:\GitHub\MDServer\GameServerApplication\GameServerApplication\obj\Debug\GameServerApplication.pdb
