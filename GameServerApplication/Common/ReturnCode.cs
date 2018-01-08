@@ -5,8 +5,8 @@ namespace Common
     public enum ReturnCode:short
     {
         Invalid=0,
-        Succeed,
-        Failed,
+        Success,
+        Fail,
         Expression
     }
 }

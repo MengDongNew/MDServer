@@ -4,13 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Common;
+using Common.Modal;
 using GameServerApplication.Handlers;
 using MDServer.GameServer;
 
 namespace GameServerApplication
 {
-    class MasterClientPeer : PeerBase
+    public class MasterClientPeer : PeerBase
     {
+        public User User { get; set; }
+
         public MasterClientPeer(InitRequest initRequest) : base(initRequest)
         {
         }

@@ -27,12 +27,18 @@ namespace MDServer.GameServer
             _arrByte = arrByte;
             _readLen = 0;
         }
+        public sbyte ReadSByte() {
+            return (sbyte)ReadByte();
+        }
         public byte ReadByte()
         {
             _readLen += 1;
             if (_readLen > _arrByte.len)
                 return 0;
             return _arrByte.arrByte64K[_readLen - 1];
+        }
+        public bool ReadBool() {
+            return ReadByte() == 1;
         }
         public byte[] ReadBytes()
         {
@@ -83,6 +89,9 @@ namespace MDServer.GameServer
             if (_readLen > _arrByte.len)
                 return 0;
             return GetInt(_arrByte.arrByte64K, _readLen - 4);
+        }
+        public uint ReadUint() {
+            return (uint)ReadInt();
         }
         public ulong ReaduLong()
         {

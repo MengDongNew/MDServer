@@ -9,5 +9,6 @@ namespace Common
     {
         SubCode,
         Server,
+        Account,
     }
 }

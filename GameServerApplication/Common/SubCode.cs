@@ -7,5 +7,7 @@ namespace Common
     /// </summary>
     public enum SubCode
     {
+        AccLogin,
+        AccRegister,
     }
 }

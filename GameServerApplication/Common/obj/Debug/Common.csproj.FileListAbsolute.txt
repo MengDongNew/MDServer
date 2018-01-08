@@ -9,3 +9,4 @@ F:\GitHub\MDServer\GameServerApplication\Common\obj\Debug\Common.csprojResolveAs
 F:\GitHub\MDServer\GameServerApplication\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
 F:\GitHub\MDServer\GameServerApplication\Common\obj\Debug\Common.dll
 F:\GitHub\MDServer\GameServerApplication\Common\obj\Debug\Common.pdb
+F:\GitHub\MDServer\GameServerApplication\Common\bin\Debug\LitJson.dll

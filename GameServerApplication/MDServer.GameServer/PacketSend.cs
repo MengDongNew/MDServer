@@ -72,7 +72,9 @@ namespace MDServer.GameServer
             _arrByte64K.arrByte64K[_i] = (v); _i++;
             return this;
         }
-
+        public PacketSend Write(sbyte v) {
+            return Write((byte)v);
+        }
         public PacketSend Write(byte[] v)
         {
             int length = v.Length;

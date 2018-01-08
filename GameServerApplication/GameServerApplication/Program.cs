@@ -17,7 +17,7 @@ namespace GameServerApplication
             //MServer server = MServer.Instance;
             //server.Start(new IPEndPoint(IPAddress.Parse("192.168.1.10"), 26680));
 
-            MasterApplication application = new MasterApplication(new IPEndPoint(IPAddress.Parse("127.0.0.1"), 26680));
+            MasterApplication application = new MasterApplication(new IPEndPoint(IPAddress.Parse("192.168.1.20"), 26680));
 
 
             while (true)

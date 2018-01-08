@@ -17,7 +17,7 @@ namespace GameServerApplication.Handlers
 
         public abstract OperationCode OpCode { get; }
 
-        public abstract void OnHandleMessage(OperationRequest request, OperationResponse response, PeerBase peer, SendParameters sendParameters);
+        public abstract void OnHandleMessage(OperationRequest request, OperationResponse response, MasterClientPeer peer, SendParameters sendParameters);
 
     }
 }

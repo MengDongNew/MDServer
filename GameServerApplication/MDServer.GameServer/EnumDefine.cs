@@ -1,6 +1,8 @@
 ﻿
 namespace MDServer.GameServer
 {
+
+
     public enum DisconnectReason
     {
         ClientDisconnect = 0,
