@@ -7,5 +7,6 @@ namespace Common
     /// </summary>
     public enum SubCode
     {
+
     }
 }
